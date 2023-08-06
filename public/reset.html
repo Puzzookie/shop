@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Reset</title>
+    <link rel="stylesheet" type="text/css" href="reset-style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Password Reset</h1>
+      <form id="reset-form">
+        <input type="email" id="email" placeholder="Enter email">
+        <button type="submit">Send Password</button>
+        <div class="loader" id="loader"></div>
+      </form>
+      <p><a href="login.html">Back</a></p>
+    </div>
+  </body>
+  <script src="client.js"></script>
+  <script>
+    // Add your JavaScript code here for handling the form submission
+    const form = document.getElementById('reset-form');
+    form.addEventListener('submit', onSubmit);
+
+    function onSubmit(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const emailInput = document.getElementById('email');
+      const email = emailInput.value;
+
+      resetPassword(email)
+        .then((result) => {
+          console.log('Password reset email sent successfully');
+        })
+        .catch((error) => {
+          //console.error('Error sending password reset email:', error.message);
+        });
+      // Clear input field
+      emailInput.value = '';
+    }
+  </script>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" type="text/css" href="login-style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Login</h1>
+      <form id="login-form">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <button id="loginButton" type="submit">Login</button>
+        <div class="loader" id="loader"></div>
+      </form>
+      <p>Don't have an account? <a href="register.html">Register</a></p>
+      <p><a href="reset.html">Forgot password?</a></p>
+    </div>
+  </body>
+  <script src="client.js"></script>
+  <script>
+    const form = document.getElementById('login-form');
+    form.addEventListener('submit', onSubmit);
+
+    function onSubmit(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const emailInput = document.getElementById('email');
+          const passwordInput = document.getElementById('password');
+
+          const email = emailInput.value;
+          const password = passwordInput.value;
+      loginUser(email, password)
+        .then((result) => {
+              // Check if the user is email verified
+          if (result.user.emailVerified) {
+            console.log('Login successful:', result);
+          } else {
+            console.log("User not email verified");
+            logoutUser();
+            // Display a message to the user indicating that they need to verify their email
+          }
+                // Clear input fields
+            emailInput.value = '';
+            passwordInput.value = '';
+
+            window.location.href = "/";
+          })
+        .catch((error) => {
+                // Clear input fields
+            emailInput.value = '';
+            passwordInput.value = '';
+          console.error('Error logging in:', error.message);
+        });
+    }
+       
+    
+  </script>
+</html>

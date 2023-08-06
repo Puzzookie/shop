@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register Page</title>
+    <link rel="stylesheet" type="text/css" href="register-style.css">
+  </head>
+  <body>
+    <div class="container">
+      <h1>Register</h1>
+      <form id="register-form">
+        <input type="email" id="email" placeholder="Email">
+        <input type="password" id="password" placeholder="Password">
+        <input type="password" id="confirm-password" placeholder="Re-enter Password">
+        <button type="submit">Register</button>
+        <div class="loader" id="loader"></div>
+      </form>
+      <p>Already have an account? <a href="login.html">Login</a></p>
+    </div>
+  </body>
+  <script src="client.js"></script>
+  <script>
+    // Add your JavaScript code here for handling the form submission
+    const form = document.getElementById('register-form');
+    form.addEventListener('submit', onSubmit);
+
+    function onSubmit(event) {
+      event.preventDefault(); // Prevent form submission
+
+      const emailInput = document.getElementById('email');
+      const passwordInput = document.getElementById('password');
+      const confirmPasswordInput = document.getElementById('confirm-password');
+
+      const email = emailInput.value;
+      const password = passwordInput.value;
+      const confirmPassword = confirmPasswordInput.value;
+
+      if(password === confirmPassword)
+      {
+        registerUser(email, password)
+        .then((result) => {
+          console.log('Registration successful:', result);
+        })
+        .catch((error) => {
+          //console.error('Error registering user:', error.message);
+        });
+      }
+      else
+      {
+        alert("Passwords don't match");
+      }
+
+      // Clear input fields
+      emailInput.value = '';
+      passwordInput.value = '';
+      confirmPasswordInput.value = '';
+    }
+  </script>
+</html>

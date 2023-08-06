@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Client Page</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Client Page</h1>
+  
+  <button id="registerButton">Register</button>
+  <button id="loginButton">Login</button>
+  <button id="resetPasswordButton">Reset Password</button>
+  <button id="setDataButton">Set Data</button>
+  <button id="getDataButton">Get Data</button>
+  <button id="logoutButton">Logout</button>
+  <button id="deleteAccountButton">Delete Account</button>
+  <button id="setProfileButton">Set Profile</button>
+  <button id="getProfileButton">Get Profile</button>
+
+
+  <script src="client.js"></script>
+  <script>
+    // Event listeners for the buttons
+    document.getElementById('registerButton').addEventListener('click', function() {
+      registerUser('whosfuzz29@gmail.com', 'JH1478james')
+        .then((result) => {
+          console.log('Registration successful:', result);
+        })
+        .catch((error) => {
+          //console.error('Error registering user:', error.message);
+        });
+
+    });
+
+    document.getElementById('loginButton').addEventListener('click', async function() {
+      loginUser('jamhuff29@gmail.com', 'JH1478james')
+        .then((result) => {
+              // Check if the user is email verified
+          if (result.user.emailVerified) {
+            console.log('Login successful:', result);
+          } else {
+            console.log("User not email verified");
+            logoutUser();
+            // Display a message to the user indicating that they need to verify their email
+          }
+        })
+        .catch((error) => {
+          //console.error('Error logging in:', error.message);
+        });
+    });
+
+    document.getElementById('resetPasswordButton').addEventListener('click', function() {
+      resetPassword('whosfuzz29@gmail.com')
+        .then((result) => {
+          console.log('Password reset email sent successfully');
+        })
+        .catch((error) => {
+          //console.error('Error sending password reset email:', error.message);
+        });
+    });
+
+    document.getElementById('setDataButton').addEventListener('click', async function() {
+      const valueToSet = 'This is the data to set'; // Replace with the data you want to set
+      try {
+        const result = await setData(valueToSet);
+      } catch (error) {
+       // console.error('Error setting data:', error.message);
+      }
+    });
+
+
+    document.getElementById('getDataButton').addEventListener('click', async function() {
+      try {
+        const keyToGet = 'BuoZSAWjXscageG4hITMYw9CEam2';
+        const data = await getData(keyToGet);
+        console.log('Data retrieved successfully:', data);
+      } catch (error) {
+       // console.error('Error getting data:', error.message);
+      }
+    });
+
+    document.getElementById('logoutButton').addEventListener('click', async function() {
+      try {
+        const result = await logoutUser();
+        console.log('Logout successful:', result.message);
+      } catch (error) {
+       // console.error('Error during logout:', error.message);
+      }
+    });
+
+    document.getElementById('deleteAccountButton').addEventListener('click', async function() {
+
+      const confirmed = confirm("Are you sure you want to delete this account? This cannot be undone.");
+        if (confirmed) {
+          try 
+          {
+            const deleteData = await setData(null);
+            const result = await deleteAccount();
+            const logout = await logoutUser();
+            console.log('Account deleted successfully', result.message);
+          } 
+          catch (error) 
+          {
+
+          }
+        } 
+        else 
+        {
+
+        }
+    });
+
+    document.getElementById('setProfileButton').addEventListener('click', async function() {
+      try {
+        const value = 'This is the data to set';
+        const result = await setProfile(value);
+
+      } catch (error) {
+       // console.error('Error setting data:', error.message);
+      }
+    });
+
+    document.getElementById('getProfileButton').addEventListener('click', async function() {
+      try {
+        
+        //const keyToGet = 'BuoZSAWjXscageG4hITMYw9CEam2';
+        const keyToGet ='PCSiFihwTfexLgznC30A4koQr9v1';
+    
+        const data = await getProfile(keyToGet);
+        console.log(data);
+        //const customClaims = data.userRecord.customClaims;
+       /* const customClaims = data.customData;
+        if(customClaims)
+        {
+          console.log(customClaims);
+        }
+        else
+        {
+          console.log("Need to create a new stripe customer");
+        }*/
+        //console.log('Data retrieved successfully:', data);
+      } catch (error) {
+        console.error('Error getting data:', error.message);
+      }
+    });
+
+
+  </script>
+</body>
+</html>

@@ -1,0 +1,234 @@
+/* Styles for the popup container */
+#popup.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 9997;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Styles for the cart container */
+  #cart.cart {
+    width: 99%;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    overflow-y: auto;
+    position: fixed;
+    left: 50%;
+    top: 50px; /* Adjusted top property */
+    bottom: 50px; /* Adjusted bottom property */
+    transform: translate(-50%, 0);
+    z-index: 9998;
+  }
+  
+  /* Styles for the cart title */
+  #cart-title.cart-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Styles for the exit button */
+  #exit-button.exit-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: transparent;
+    color: #333;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  #exit-button.exit-button:hover {
+    color: #ff5a5a;
+ }
+  
+  /* Styles for the cart items container */
+  #cart-items.cart-items {
+    list-style-type: none;
+    padding: 0;
+    max-height: calc(100% - 160px); /* Set the max height to 100% minus the desired space (e.g., 20px) */
+    overflow-y: auto; /* Enable vertical scrolling when the content exceeds the container height */
+  }
+  
+  /* Styles for the item container */
+  #item-container.item-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* Add this line to allow items to wrap to the next row */
+  }
+  
+  /* Styles for the top part of each item */
+  #item-top.item-top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Equal spacing for all items inside */
+    flex: 1;
+    height: 100%; /* Assuming the parent container has a defined height */
+  }
+  
+  /* Styles for the item image */
+  #item-image.item-image {
+    width: 120px;
+    height: 160px;
+    padding: 5px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: transparent;
+    object-fit: cover; /* Make the image cover the box without stretching */
+  }
+  
+    /* Styles for the item ID */
+#item-id.item-id {
+    /* Add your new styles for the item ID here */
+    flex: 1;
+    padding: 10px;
+    }
+  /* Styles for the item name */
+  #item-name.item-name {
+    font-weight: bold;
+    flex: 1;
+    width: 100%;
+    padding: 10px;
+  }
+  
+  
+  /* Styles for the item controls container */
+  #item-controls.item-controls {
+    display: flex;
+    align-items: center;
+    width: 100px; /* Add a fixed width to maintain consistent sizing */
+    
+  }
+  
+  #item-up.item-up {
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    font-size: 22px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80px; /* Add a fixed width to maintain consistent sizing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+  }
+    
+  #item-up.item-up:hover {
+    background-color: #45A049;
+  }
+  
+  /* Styles for the item quantity span */
+  #item-quantity.item-quantity {
+    padding: 5px;
+}
+
+#item-down.item-down {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  padding: 10px 10px 10px 10px;
+  border-radius: 5px;
+  font-size: 22px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 80px; /* Add a fixed width to maintain consistent sizing */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex: 1;
+}
+  
+#item-down.item-down:hover {
+  background-color: #45A049;
+}
+
+  /* Styles for the bottom part of each item */
+  #item-bottom.item-bottom {
+    display: flex;
+    width: 100%; /* Add a fixed width to maintain consistent sizing */
+    flex-basis: 100%; /* Add this line to make the item-bottom span the full width */
+  }
+  
+  /* Styles for the item price */
+  #item-total-price.item-total-price {
+    font-weight: bold;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Styles for the remove button */
+  #remove-button.remove-button {
+    background-color: #ff5a5a;
+    color: #fff;
+    border: none;
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 80px; /* Add a fixed width to maintain consistent sizing */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+  }
+
+  #remove-button.remove-button:hover {
+    background-color: #ff1a1a;
+  }
+
+
+#total-price.total-price {
+    font-weight: bold;
+    display: flex; /* Use flexbox layout */
+    height: 50px; /* Set the desired height in pixels */
+    font-weight: bold;
+    align-items: center; /* Center the content vertically */
+  }
+  
+
+  #checkoutButtonDiv {
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #checkout-button.checkout-button {
+    background-color: #4CAF50; /* Green background color */
+    color: #fff; /* White text color */
+    border: none; /* Remove the border */
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Add a fixed width to maintain consistent sizing */
+  }
+  
+  #checkout-button.checkout-buttonn:hover {
+    background-color: #45A049; /* Darker green color on hover */
+  }
+  
+  .no-scroll {
+    overflow: hidden;
+  }

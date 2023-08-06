@@ -1,0 +1,133 @@
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px;
+    z-index: 9997;
+  }
+  
+  .navbar .logo {
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff;
+  }
+  
+  .navbar .cart-button {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .navbar .cart-button img {
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+
+  .navbar .sandwich-icon {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  
+  
+  .navbar .bar {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+  }
+
+  .navbarPopup {
+    position: fixed;
+    top: 0;
+    left: -100%; /* Initially off-screen to the left */
+    width: 100%; /* Adjust the width as needed */
+    height: 100%;
+    background-color: #fff; /* Add your desired background color for the tab */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a shadow to the tab */
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    transition: left 0.3s ease; /* Add the transition effect */
+    justify-content: space-between;
+    
+  }
+  
+ /* ... Existing CSS styles ... */
+
+/* Tab button styles */
+.tab-button {
+  padding: 20px 7px; /* Set 10px top and bottom padding, 5px left and right padding */
+  font-size: 16px;
+  background-color: #f0f0f0; /* Green background color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 0; /* Remove border-radius to make the corners square */
+  cursor: pointer;
+  width: 100%;
+  margin-top: 5px; /* Add 5px margin to the top */
+  margin-bottom: 0; /* Remove the margin-bottom so there is no space between buttons */
+  text-align: left; /* Align the text to the left */
+  color: #000; /* Change the color to the desired value, e.g., #000 for black */
+}
+
+.intro-tab-button {
+  padding: 20px 7px; /* Set 10px top and bottom padding, 5px left and right padding */
+  font-size: 16px;
+  background-color: #fff; /* Green background color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 0; /* Remove border-radius to make the corners square */
+  width: 100%;
+  margin-top: 5px; /* Add 5px margin to the top */
+  margin-bottom: 0; /* Remove the margin-bottom so there is no space between buttons */
+  text-align: center; /* Align the text to the left */
+  color: #000; /* Change the color to the desired value, e.g., #000 for black */
+}
+.tab-buttons-wrapper
+{
+  width: 100%;
+
+}
+
+.tab-button:last-child {
+  margin-bottom: 0; /* Remove margin from the last tab button */
+}
+
+/* Exit tab button styles */
+.exit-tab-button {
+  padding: 10px 15px;
+  font-size: 18px;
+  background-color: #333; /* Red background color */
+  color: #fff; /* White text color */
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 7px;
+  right: 7px;
+  margin-bottom: 100px; /* Add right margin of 10px to create space between the exit button and regular buttons */
+
+}
+
+.exit-tab-button:hover {
+  background-color: rgb(22, 22, 36); /* Darker red on hover */
+}
+
+/* ... Existing CSS styles ... */

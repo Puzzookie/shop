@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ColorShop</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="navbarStyle.css">
+  <link rel="stylesheet" type="text/css" href="containerStyle.css">
+  <link rel="stylesheet" type="text/css" href="popupStyle.css">
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+  <div class="dim-overlay" id="dimOverlay"></div> <!-- Add the dim overlay element -->
+
+  <div class="navbar">
+    <div class="sandwich-icon" onclick="showTabs()">
+      <div class="bar"></div>
+      <div class="bar"></div>
+      <div class="bar"></div>
+    </div>
+    <div class="logo">ColorShop</div>
+    <div class="cart-icon">
+      <button class="cart-button" onclick="showPopup()">
+        <span id="cartText">0</span>
+        <img src="cart.png" alt="Shopping Cart Icon">
+      </button>
+    </div>
+  </div>
+
+  <div class="navbarPopup" id="tabsPopup">
+    <button class="exit-tab-button" onclick="hideTabs()">X</button>
+    <div class="tab-buttons-wrapper">
+      <button class="intro-tab-button"><div id="intro-name"></div><div id="intro-email"></div></button>
+      <button class="tab-button" id="intro-signinorout" onclick="signInOrOut()">Sign Out</button>
+      <button class="tab-button" onclick="myProfile()">My Profile</button>
+      <button class="tab-button" onclick="myOrders()">My Orders</button>
+    </div>
+  </div>
+  
+  <div id="loadingIcon" class="loading-icon">
+    <img src="loading.gif" alt="Loading Icon">
+  </div>
+  
+  <div id="container" class="container">
+    <!--import your products-->
+  </div>
+
+  <div id="popup" class="popup">
+    <div id="cart" class="cart">
+      <div id="cart-title" class="cart-title">Cart Items</div>
+      <button id="exit-button" class="exit-button" onclick="hidePopup()">X</button>
+      <div id="cart-items" class="cart-items">
+        <!--import your cart-->
+      </div>
+      <div id="total-price" class="total-price"></div>
+      <div id="checkoutButtonDiv" class="checkoutButtonDiv">
+        <button id="checkout-button" class="checkout-button" onclick="onCheckout()">Continue to checkout</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="cart.js"></script>
+  <script src="script.js"></script>
+  <script src="importItems.js"></script>
+  <script src="client.js"></script>
+</body>
+</html>

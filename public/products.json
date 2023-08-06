@@ -1,0 +1,47 @@
+{
+  "version": "0.1",
+  "products": [
+    {
+      "id": "16502",
+      "name": "red",
+      "price": 500,
+      "image": "images/red.png"
+    },
+    {
+      "id": "16301",
+      "name": "orange",
+      "price": 600,
+      "image": "images/orange.png"
+    },
+    {
+      "id": "12403",
+      "name": "yellow",
+      "price": 700,
+      "image": "images/yellow.png"
+    },
+    {
+      "id": "12602",
+      "name": "green",
+      "price": 800,
+      "image": "images/green.png"
+    },
+    {
+      "id": "12201",
+      "name": "blue",
+      "price": 900,
+      "image": "images/blue.png"
+    },
+    {
+      "id": "11039",
+      "name": "indigo",
+      "price": 1000,
+      "image": "images/indigo.png"
+    },
+    {
+      "id": "12509",
+      "name": "violet",
+      "price": 1100,
+      "image": "images/violet.png"
+    }
+  ]
+}
