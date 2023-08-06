@@ -1,6 +1,6 @@
 async function loadProducts() {
   try {
-    const response = await fetch('https://raw.githubusercontent.com/Puzzookie/shop/main/products.json');
+    const response = await fetch('https://raw.githubusercontent.com/Puzzookie/shop/main/public/products.json');
     const data = await response.json(); // Parse the entire JSON object, including the version and products
 
     // Access the products array from the JSON data
